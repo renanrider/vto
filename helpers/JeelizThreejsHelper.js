@@ -16,7 +16,7 @@ THREE.JeelizHelper = (function(){
     
     cameraMinVideoDimFov: 46, //Field of View for the smallest dimension of the video in degrees
 
-    isDebugPivotPoint: true //display a small cube for the pivot point
+    isDebugPivotPoint: false //display a small cube for the pivot point
   };
 
   //private vars :

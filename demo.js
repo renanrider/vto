@@ -28,12 +28,12 @@ function init_threeScene(spec) {
   const loader = new THREE.TextureLoader();
 
   const materials = [
-    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Left.png'),transparent: true, opacity: 1, color: 0xFFFFFF }), //left side 
-    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 1, color: 0xFFFFFF}), //right side
-    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //top side - unused
-    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //bottom side - unused
-    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-front.png'),transparent: true, opacity: 1, color: 0xFFFFFF}), //front side - unused
-    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //back side -unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-3/glasses-3-side-Left.png'),transparent: true, opacity: 1, color: 0xFFFFFF }), //left side 
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-3/glasses-3-side-Right.png'),transparent: true, opacity: 1, color: 0xFFFFFF}), //right side
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-3/glasses-3-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //top side - unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-3/glasses-3-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //bottom side - unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-3/glasses-3-front.png'),transparent: true, opacity: 1, color: 0xFFFFFF}), //front side - unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-3/glasses-3-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //back side -unused
   ];
   	
  // In this cube the texture of the glasses will be applied
