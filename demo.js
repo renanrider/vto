@@ -42,13 +42,31 @@ function init_threeScene(spec) {
 		cube.scale.multiplyScalar(1.1); //1.1
 		cube.position.setY(0.25); //move glasses a bit up 0.05
 		cube.position.setZ(0.02);//move glasses a bit forward 0.25
-		cube.rotation.x = cube.rotation.x + 0.10;
+		cube.rotation.x = cube.rotation.x + -0.10;
 		window.zou=cube;
 		addDragEventListener(cube);
 		threeStuffs.faceObject.add(cube);
 
   // CREATE THE CAMERA
-  THREECAMERA = THREE.JeelizHelper.create_camera();
+  //THREECAMERA = THREE.JeelizHelper.create_camera();
+
+
+  //CREATE THE CAMERA
+
+  /*
+  PerspectiveCamera( fov : Number, aspect : Number, near : Number, far : Number )
+
+  fov — Camera frustum vertical field of view.
+  aspect — Camera frustum aspect ratio.
+  near — Camera frustum near plane.
+  far — Camera frustum far plane.
+*/
+  var fov = 5;
+  var near = 0.1;
+  var far = 100;
+  var aspecRatio = spec.canvasElement.width / spec.canvasElement.height;
+  THREECAMERA = new THREE.PerspectiveCamera(fov, aspecRatio, near, far);
+
   // CREATE A LIGHT
   const ambient = new THREE.AmbientLight(0xffffff, 1);
   threeStuffs.scene.add(ambient)
@@ -71,6 +89,7 @@ function main() {
 
 function init_faceFilter(videoSettings){
   JEEFACEFILTERAPI.init({
+    followZRot: true,
     canvasId: 'jeeFaceFilterCanvas',
     NNCpath: './dist/', // root of NNC.json file
     videoSettings: videoSettings,

@@ -6,17 +6,17 @@
 THREE.JeelizHelper = (function(){
   //internal settings
   const _settings = {
-    rotationOffsetX: 0, //negative -> look upper. in radians
-    pivotOffsetYZ: [0.4,0.2], //[0.2,0.2], //XYZ of the distance between the center of the cube and the pivot. enable _settings.isDebugPivotPoint to set this value
+    rotationOffsetX: 0.1, //negative -> look upper. in radians
+    pivotOffsetYZ: [0.2,0.2], //[0.2,0.2], //XYZ of the distance between the center of the cube and the pivot. enable _settings.isDebugPivotPoint to set this value
     
     detectionThreshold: 0.75, //sensibility, between 0 and 1. Less -> more sensitive
     detectionHysteresis: 0.05,
 
-    tweakMoveYRotateY: 0.5, //tweak value: move detection window along Y axis when rotate the face
+    tweakMoveYRotateY: -0.02, //tweak value: move detection window along Y axis when rotate the face
     
     cameraMinVideoDimFov: 46, //Field of View for the smallest dimension of the video in degrees
 
-    isDebugPivotPoint: false //display a small cube for the pivot point
+    isDebugPivotPoint: true //display a small cube for the pivot point
   };
 
   //private vars :
