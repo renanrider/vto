@@ -3,7 +3,7 @@
 // some globalz :f0.5
 var THREECAMERA;
 
-// callback : launched if a face is detected or lost. TODO : add a cool particle effect WoW !
+// callback : launched if a face is detected or lost.
 function detect_callback(isDetected) {
   if (isDetected) {
     console.log('INFO in detect_callback() : DETECTED');
@@ -28,51 +28,24 @@ function init_threeScene(spec) {
   const loader = new THREE.TextureLoader();
 
   const materials = [
-    new THREE.MeshBasicMaterial({map: loader.load('side.png'),transparent: true, opacity: 1, color: 0x000000 }), //left side
-    new THREE.MeshBasicMaterial({map: loader.load('side-r.png'),transparent: true, opacity: 1, color: 0x000000}), //right
-    new THREE.MeshBasicMaterial({map: loader.load('https://threejsfundamentals.org/threejs/resources/images/flower-3.jpg'),transparent: true, opacity: 0.0, color: 0xFF0000}), //top
-    new THREE.MeshBasicMaterial({map: loader.load('https://threejsfundamentals.org/threejs/resources/images/flower-4.jpg'),transparent: true, opacity: 0.0, color: 0xFF0000}), //bottom
-    new THREE.MeshBasicMaterial({map: loader.load('front.png'),transparent: true, opacity: 1, color: 0x000000}), //front
-    new THREE.MeshBasicMaterial({map: loader.load('https://threejsfundamentals.org/threejs/resources/images/flower-6.jpg'),transparent: true, opacity: 0.0, color: 0xFF0000}), //back
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Left.png'),transparent: true, opacity: 1, color: 0xFFFFFF }), //left side 
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 1, color: 0xFFFFFF}), //right side
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //top side - unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //bottom side - unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-front.png'),transparent: true, opacity: 1, color: 0xFFFFFF}), //front side - unused
+    new THREE.MeshBasicMaterial({map: loader.load('./glasses/glasses-2/glasses-2-side-Right.png'),transparent: true, opacity: 0.0, color: 0xFF0000}), //back side -unused
   ];
   	
+ // In this cube the texture of the glasses will be applied
   const cube = new THREE.Mesh(geometry, materials);  
 		cube.frustumCulled = false;  
 		cube.scale.multiplyScalar(1.1); //1.1
 		cube.position.setY(0.25); //move glasses a bit up 0.05
-		cube.position.setZ(0);//move glasses a bit forward 0.25
-		cube.rotation.x = cube.rotation.x + 0.20;
+		cube.position.setZ(0.02);//move glasses a bit forward 0.25
+		cube.rotation.x = cube.rotation.x + 0.10;
 		window.zou=cube;
 		addDragEventListener(cube);
 		threeStuffs.faceObject.add(cube);
-		threeStuffs.faceObject.add(cube);
-		
-		loadingManager.onLoad = () => {	//Do stuff };
-
-
-  // CREATE THE VIDEO BACKGROUND
- // function create_mat2d(threeTexture, isTransparent){ //MT216 : we put the creation of the video material in a func because we will also use it for the frame
-    return new THREE.RawShaderMaterial({
-      depthWrite: false,
-      depthTest: false,
-      transparent: isTransparent,
-      vertexShader: "attribute vec2 position;\n\
-        varying vec2 vUV;\n\
-        void main(void){\n\
-          gl_Position=vec4(position, 0., 1.);\n\
-          vUV=0.5+0.5*position;\n\
-        }",
-      fragmentShader: "precision lowp float;\n\
-        uniform sampler2D samplerVideo;\n\
-        varying vec2 vUV;\n\
-        void main(void){\n\
-          gl_FragColor=texture2D(samplerVideo, vUV);\n\
-        }",
-       uniforms:{
-        samplerVideo: { value: threeTexture }
-       }
-    });
-  }
 
   // CREATE THE CAMERA
   THREECAMERA = THREE.JeelizHelper.create_camera();
