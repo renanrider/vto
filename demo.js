@@ -42,7 +42,7 @@ function init_threeScene(spec) {
 		cube.scale.multiplyScalar(1.1); //1.1
 		cube.position.setY(0.25); //move glasses a bit up 0.05
 		cube.position.setZ(0.02);//move glasses a bit forward 0.25
-		cube.rotation.x = cube.rotation.x + -0.10;
+    cube.rotation.x -= 0.10;
 		window.zou=cube;
 		addDragEventListener(cube);
 		threeStuffs.faceObject.add(cube);
