@@ -2,6 +2,10 @@
 
 This is a proof of concept (PoC) project to create a virtual glasses try-on experience using images of glasses instead of 3D models. The project utilizes Three.js to render a three-dimensional cube with glasses textures and JeelizFaceFilter for real-time face tracking.
 
+## Demo
+
+[Demo][(https://link-url-here.org](https://virtual-try-on-threejs-cube.netlify.app/))
+
 ## Features
 
 - **Real-time Rendering:** Virtually render glasses over a live camera feed.
@@ -16,7 +20,7 @@ This is a proof of concept (PoC) project to create a virtual glasses try-on expe
 
 ## How to Use
 
-1. Clone the repository: `git clone https://github.com/your-username/repository-name.git`
+1. Clone the repository: `git clone [https://github.com/your-username/repository-name.git](https://github.com/renanrider/vto.git)`
 2. Install dependencies: `npm install`
 3. Start the application: `npm server.js`
 4. Open the application in a browser: `http://localhost:80`
