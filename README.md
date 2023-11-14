@@ -19,7 +19,7 @@ This is a proof of concept (PoC) project to create a virtual glasses try-on expe
 
 ## How to Use
 
-1. Clone the repository: `git clone [https://github.com/your-username/repository-name.git](https://github.com/renanrider/vto.git)`
+1. Clone the repository: `git clone https://github.com/renanrider/vto.git`
 2. Install dependencies: `npm install`
 3. Start the application: `npm server.js`
 4. Open the application in a browser: `http://localhost:80`
