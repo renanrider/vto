@@ -4,7 +4,7 @@ This is a proof of concept (PoC) project to create a virtual glasses try-on expe
 
 ## Demo
 
-[Demo][(https://link-url-here.org](https://virtual-try-on-threejs-cube.netlify.app/))
+[Demo](https://link-url-here.org](https://virtual-try-on-threejs-cube.netlify.app/))
 
 ## Features
 
